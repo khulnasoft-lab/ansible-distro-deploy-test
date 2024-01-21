@@ -1,0 +1,10 @@
+- name: Download and extract files
+  unarchive:
+    src: https://khulnasoft-lab.github.io/distro/build-v{{ distro_vars.task_details.incoming_version }}.tar.gz
+    dest: "{{ dest_path }}"
+    remote_src: True
+
+
+- name: Print version
+  debug:
+    msg: "Version {{ distro_vars.task_details.incoming_version }} is installed."
